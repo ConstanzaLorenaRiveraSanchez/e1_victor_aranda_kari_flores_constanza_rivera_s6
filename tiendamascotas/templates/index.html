@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - PawPalace</title>
+  <!--Adicción de bootstrap-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <link rel="icon" href="images/Paw.png" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+<nav class="navbar">
+    <!-- Logo de la barra de navegación -->
+  <a class="navbar-brand" href="{% url 'inicio' %}">
+    <img src="{% static 'images/Paw.png' %}" alt="PawPalace Logo">
+  </a>
+    <!-- Enlaces de navegación -->
+    <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+    <a class="nav-link" href="{% url 'perros' %}">Perros</a>
+    <a class="nav-link active" href="{% url 'gatos' %}">Gatos</a>
+    <!-- Botón de inicio de sesión -->
+    <a id="login" class="nav-link login-btn" href="{% url 'inicioSesion' %}">Iniciar Sesión</a>
+    <a href="{% url 'carrito' %}" class="cart-link">
+      <button class="btn cart-btn">
+        <img src="{% static 'images/carrito.svg' %}" alt="Carrito">
+        <span id="cart-counter">0</span>
+      </button>
+    </a>    
+  </nav>
+
+<!-- Botones de selección de perros o gatos -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+      <a href="{% url 'perros' %}">
+        <div class="category-button">
+          <img src="{% static 'images/alimento para perros.png' %}" alt="Perros" class="img-fluid">
+        </div>
+      </a>
+    </div>
+    <div class="col-sm-6 col-md-6">
+      <a href="{% url 'gatos' %}">
+        <div class="category-button">
+          <img src="{% static 'images/alimento para gatos.png' %}" alt="Gatos" class="img-fluid">
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 PawPalace. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+<!-- Scripts de Bootstrap y personalizados -->
+<script src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js' %}"></script>
+<script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js' %}"></script>
+<script src="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>

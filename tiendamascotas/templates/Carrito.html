@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - PawPalace</title>
+  <!--Adicción de bootstrap-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar">
+        <!-- Logo de la barra de navegación -->
+  <a class="navbar-brand" href="{% url 'inicio' %}">
+    <img src="{% static 'images/Paw.png' %}" alt="PawPalace Logo">
+  </a>
+    <!-- Enlaces de navegación -->
+    <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+    <a class="nav-link" href="{% url 'perros' %}">Perros</a>
+    <a class="nav-link" href="{% url 'gatos' %}">Gatos</a>
+    <!-- Botón de inicio de sesión -->
+    <a id="login" class="nav-link login-btn" href="{% url 'inicioSesion' %}">Iniciar Sesión</a>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container mt-5">
+    <h1>Carrito de Compras</h1>
+    <div id="carrito-lista" class="mt-3">
+      <!-- Aquí se mostrarán los productos seleccionados -->
+    </div>
+    <div id="total-pagar" class="mt-3">
+      <p>Total a Pagar: <span id="monto-total">$0.00 CLP</span></p>
+      <button id="btn-pagar" class="btn btn-primary">Pagar</button>
+    </div>
+  </div>
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 PawPalace. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!-- Scripts de Bootstrap y personalizados -->
+  <script src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js' %}"></script>
+  <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js' %}"></script>
+  <script src="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
